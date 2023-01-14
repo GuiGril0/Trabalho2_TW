@@ -1,0 +1,652 @@
+/* index.html */
+html, body{
+    margin: 0;
+}
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, whitesmoke, lightgray);
+    width: 100%;
+    height: 80px;
+
+}
+
+.dropbutton {
+    display: none;
+}
+
+*{
+    font-family: Ubuntu, sans-serif;
+}
+
+#homePage{
+    float: left;
+    position: relative;
+    margin-left: 5%;
+    width: auto;
+    text-decoration: none;
+    font-size: 2em;
+    top: calc(40px - 1em/2);
+    color: black;
+}
+
+header nav ul {
+    float: right;
+    /*display: flex;*/
+    color: black;
+    padding-right: 15px;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-decoration: none;
+    position: relative;
+    top: calc(40px - (1em/2));
+}
+header nav ul li{
+    font-size: larger;
+    display: inline-block;
+}
+header nav ul li a {
+    padding: 0 10px 0 15px;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Corpo */
+.type {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.type #offer {
+    float: left;
+}
+
+.type #search {
+    float: right;
+}
+
+body {
+    background: linear-gradient(to right, lightblue, violet);
+}
+main{
+   margin: 5%;
+}
+img{
+    width: 100%;
+}
+#ofertas{
+    width: 45%;
+    float: left;
+    margin-top: 7%;
+    clear: both;
+}
+#procuras{
+    width: 45%;
+    float: right;
+    margin-top: 7%;
+}
+
+#ofertas .box {
+    background: linear-gradient(to right, cyan, deepskyblue);
+    width: 100%;
+}
+
+#ofertas a {
+    text-decoration: none;
+    color: black;
+}
+
+#ofertas .box ul {
+    list-style-type: none;
+}
+
+
+#procuras img {
+    width: 100%;
+}
+
+#procuras .box {
+    background: linear-gradient(to right, cyan, deepskyblue);
+}
+
+#procuras a {
+    text-decoration: none;
+    color: black;
+}
+
+#procuras .box ul {
+    list-style-type: none;
+}
+
+/* Rodapé */
+#ifooter {
+    clear: both;
+    width: 100%;
+    position: relative;
+    bottom: calc(15px - (2em));
+}
+
+footer {
+    background: linear-gradient(to right, whitesmoke, lightgray);
+}
+
+footer hr{
+    border: 1px solid black;
+    clear: both;
+}
+
+footer p{
+    font-size: smaller;
+    text-align: center;
+}
+
+#pat img{
+    overflow: auto;
+    padding: 5px 5px;
+    height: 40px;
+
+}
+
+/* procurar.html */
+#opcoes{
+   list-style-type: none;
+}
+
+#ContentProcura input[type=text], select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#ContentProcura h2{
+    text-align: center;
+    font-size: xxx-large;
+    margin-bottom: 10%;
+}
+
+#ContentProcura{
+    width: 35%;
+    margin: auto;
+    justify-content: center;
+    padding: 8%;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 10%;
+    background-color: #EAF0F6;
+}
+
+#ContentProcura input{
+    width: 100%;
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: large;
+    height: auto;
+
+}
+
+#ContentProcura select{
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: 0.75em;
+    height: auto;
+}
+
+#ContentProcura ul li{
+    margin: 1%;
+}
+
+#ContentProcura input[type=submit]{
+    width: 100%;
+    background-color: #191907;
+    color: white;
+    padding: 3%;
+    margin-left: 2.5%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+#resultados .box img{
+    width: 100%;
+}
+
+#resultados .box a{
+    text-decoration: none;
+    color: black;
+}
+
+#resultados .box a ul{
+    list-style-type: none;
+    text-align: center;
+}
+#resultados .box {
+    box-sizing: content-box;
+    background: linear-gradient(to right, cyan, deepskyblue);
+    width: 50%;
+    margin: auto;
+}
+
+#pfooter {
+    position: relative;
+    bottom: calc(2px - 23em);
+    width: 100%;
+}
+
+/*Anuncio.html*/
+
+#TituloAnuncio{
+    text-align: center;
+}
+
+#anu .box a {
+    text-decoration: none;
+    color: black;
+}
+#anu .box img{
+    width: 100%;
+    margin: auto;
+    display: block;
+
+}
+#anu .box div{
+    list-style-type: none;
+    text-align: center;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+#anu .box{
+    box-sizing: content-box;
+    background: linear-gradient(to right, cyan, deepskyblue);
+    width: 50%;
+    margin: auto;
+}
+
+#anu .box ul{
+    list-style-type: none;
+}
+#anu .box input[type=text]{
+    margin: auto;
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: medium;
+    height: auto;
+
+}
+
+#anu .box input[type=submit]{
+    width: 10vw;
+    margin-left: auto;
+    height: auto;
+}
+
+#anu .box ul li{
+    margin: 2%;
+    font-size: medium;
+}
+
+
+#anufooter {
+    position: relative;
+    bottom: calc(15px - (2em));
+}
+
+/* form.html */
+#ContentAnunciar ul{
+    list-style-type: none;
+}
+#TituloAnunciar{
+    text-align: center;
+    font-size: 1.5em;
+}
+#ContentAnunciar{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 20px;
+    background-color: #EAF0F6;
+}
+
+#ContentAnunciar input{
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: large;
+    height: auto;
+}
+
+#ContentAnunciar select{
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: large;
+    height: auto;
+}
+
+#ContentAnunciar input[type=submit]{
+    width: 20vw;
+    height: auto;
+    margin-left: 6vw;
+}
+
+
+#ContentAnunciar ul li{
+    margin: 2%;
+}
+
+#ffooter {
+    position: relative;
+    bottom: calc(10px - (15em));
+}
+
+#ativo .box {
+    box-sizing: content-box;
+    margin: 2% auto;
+    width: 50%;
+    background: linear-gradient(to right, cyan, deepskyblue);
+}
+
+#ativo .box img {
+    width: 100%;
+}
+
+#ativo .box div ul{
+    list-style-type: none;
+    text-align: center;
+    overflow: auto;
+}
+
+#ativo .box form ul{
+    list-style-type: none;
+    text-align: center;
+    overflow: auto;
+}
+
+#inativo .box {
+    box-sizing: content-box;
+    margin: 2% auto;
+    width: 50%;
+    background: linear-gradient(to right, cyan, deepskyblue);
+}
+
+#inativo .box img {
+    width: 100%;
+}
+
+#inativo .box div ul {
+    list-style-type: none;
+    text-align: center;
+    overflow: auto;
+}
+
+#inativo .box form ul {
+    list-style-type: none;
+    text-align: center;
+    overflow: auto;
+}
+
+#afooter {
+    position: relative;
+    bottom: calc(-35px - (40em));
+    width: 100%;
+    float: bottom;
+}
+
+/* login.html */
+#login ul {
+    list-style-type: none;
+}
+
+#login{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 20px;
+    background-color: #EAF0F6;
+}
+
+#login h2{
+    text-align: center;
+}
+
+#login ul{
+    justify-content: center;
+    font-size: larger;
+    margin-top: 4%;
+}
+
+#login input[type=submit]{
+    font-size: large;
+    width:auto;
+    height: auto;
+    margin: auto;
+}
+
+#login input[type=text]{
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: large;
+    height: auto;
+}
+#login input[type=password]{
+    border-radius: 9px;
+    border-color: black;
+    padding-left: 10px;
+    font-size: large;
+    height: auto;
+    margin-top: 10px;
+}
+
+#lfooter {
+    position: relative;
+    bottom: calc(5px - (40em));
+}
+
+/* utilizador.html */
+#ufooter {
+    position: relative;
+    bottom: calc(2px - 42em);
+}
+
+/* anuncio_utilizador.html */
+
+#utifooter {
+    position: relative;
+    bottom: calc(2px - 42em);
+}
+
+#anu_user .box div button{
+    border: none;
+    color: black;
+    margin-top: 2%;
+    padding: 1em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 450px){
+    #homePage {
+        font-size: 1.5em;
+    }
+
+    .dropbutton {
+        width: calc(15vw - 1em);
+        height: calc(20vw - 1em);
+    }
+}
+
+@media screen and (max-width: 929px){
+    .dropbutton {
+        display: block;
+        padding: 10% 50%;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        width: 8%;
+        position: absolute;
+        left: 85%;
+        top: 2%;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: static;
+        background-color: #f9f9f9;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 10px 30px;
+        z-index: 1;
+        overflow: auto;
+    }
+
+    .dropdown-content li {
+        margin-top: 5%;
+        color: black;
+    }
+
+
+
+    .show {display: block;}
+}
+
+@media screen and (max-width: 660px){
+    #ContentProcura{
+        width: 300px;
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+        border-style: solid;
+        border-color: #B6C7D6;
+        border-radius: 20px;
+        background-color: #EAF0F6;
+    }
+    #ContentProcura h2{
+        font-size: medium;
+    }
+
+    #ContentProcura input[type=text], select{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    #ContentProcura input[type=submit]{
+        width: 100%;
+        background-color: #191907;
+        color: white;
+        padding: 3%;
+        margin-left: 2.5%;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
+    #ContentAnunciar{
+        width: 300px;
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+        border-style: solid;
+        border-color: #B6C7D6;
+        border-radius: 20px;
+        background-color: #EAF0F6;
+    }
+    #ContentAnunciar h2{
+        font-size: medium;
+    }
+    #ContentAnunciar select{
+        font-size: smaller;
+        height: auto;
+    }
+    #ContentAnunciar input[type=text]{
+        height: auto;
+        width: 50px;
+    }
+    #ContentAnunciar input[type=submit]{
+        font-size: smaller;
+        height: auto;
+        width: 100px;
+    }
+    #ContentAnunciar input[type=number]{
+        height: auto;
+        width: 100px;
+    }
+
+    #login{
+        width: 300px;
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+        border-style: solid;
+        border-color: #B6C7D6;
+        border-radius: 20px;
+        background-color: #EAF0F6;
+    }
+    #login h2{
+        font-size: medium;
+    }
+    #login ul{
+        font-size: small;
+    }
+    #login input[type=text]{
+        height: auto;
+        width: 50px;
+    }
+    #login input[type=password]{
+        height: auto;
+        width: 50px;
+    }
+    #login input[type=submit]{
+        font-size: smaller;
+        height: auto;
+        width: 100px;
+    }
+
+    #anu .box input[type=text]{
+        margin: auto;
+        border-radius: 9px;
+        border-color: black;
+        padding-left: 10px;
+        font-size: medium;
+        height: auto;
+        width: 25vw;
+    }
+
+    #anu .box input[type=submit]{
+        width: 20vw;
+        margin: auto;
+        height: auto;
+    }
+    #anu .box ul li{
+        font-size: medium;
+    }
+
+    #ativo .box {
+        width: 80%;
+    }
+
+    #inativo .box {
+        width: 80%;
+    }
+}
