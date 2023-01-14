@@ -1,5 +1,5 @@
 //função para submeter o formulário
-
+/*
 function submission(forms) {
     var xhttp = new XMLHttpRequest();
 
@@ -27,10 +27,11 @@ function submission(forms) {
     xhttp.send(response);
     return false;
 }
-
+*/
 
 //função para criar uma box para anúncio
-function createBox(anuncio, href='anuncio.html', src='images/house.png'){
+/*
+function createBox(anuncio, href='anuncio.jsp', src='images/house.png'){
     let box = document.createElement("div");
     box.classList.add("box");
 
@@ -76,8 +77,9 @@ function createBox(anuncio, href='anuncio.html', src='images/house.png'){
 
     return box;
 }
-
+*/
 //função para receber os anúncios do servidor
+/*
 function getAnuncio(pesquisa) {
     var xhttp = new XMLHttpRequest();
     document.getElementById('resultados').replaceChildren();
@@ -103,14 +105,19 @@ function getAnuncio(pesquisa) {
     xhttp.send(response);
     return false;
 }
+ */
 
 //função para escolher os 3 anúncios mais recentes
+/*
 function orderAnuncios(data) {
     let res = alasql("select * from ? order by data desc limit 3", [data]);
     return res;
 }
 
+ */
+
 //função para colocar os 3 anúncios na página principal
+/*
 function mainOfertas(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -129,7 +136,10 @@ function mainOfertas(){
     xhttp.send("tipo=oferta");
 }
 
+ */
+
 //função para colocar os 3 anúncios na página principal
+/*
 function mainProcuras() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -148,7 +158,10 @@ function mainProcuras() {
     xhttp.send("tipo=procura");
 }
 
+ */
+
 //função que, quando se clica no anúncio, mostra o anúncio em tamanho maior
+/*
 function urlAnuncios(aid, value) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -166,7 +179,10 @@ function urlAnuncios(aid, value) {
     xhttp.send(aid);
 }
 
+ */
+
 //funçao para criar o anúncio para a página de apenas um anúncio
+/*
 function createAnuncio(anuncio, src='images/house.png') {
     let box = document.createElement("div");
     box.classList.add("box");
@@ -195,9 +211,6 @@ function createAnuncio(anuncio, src='images/house.png') {
     li = document.createElement("li");
     li.textContent = "Anunciante: " + anuncio.anunciante;
     ul.appendChild(li);
-    /*li = document.createElement("li");
-    li.textContent = anuncio.aid.value;
-    ul.appendChild(li);*/
     li = document.createElement("li");
     li.textContent = "Localização: " + anuncio.zona;
     ul.appendChild(li);
@@ -252,8 +265,10 @@ function createAnuncio(anuncio, src='images/house.png') {
     form.setAttribute("onsubmit", "return submitContacto(this)");
     return box;
 }
+*/
 
 //função para enviar a mensagem relativa ao anúncio escolhido
+/*
 function submitContacto(forms) {
     var xhttp = new XMLHttpRequest();
     let response = "";
@@ -271,8 +286,10 @@ function submitContacto(forms) {
     xhttp.send(response);
     return false;
 }
+*/
 
 //função que serve para o administrador receber os anúncios
+/*
 function checkAnuncios(forms) {
     var xhttp = new XMLHttpRequest();
     let res = "";
@@ -298,6 +315,9 @@ function checkAnuncios(forms) {
     return false;
 }
 
+ */
+/*
+
 function getAllAnuncios(aid, tipo) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -311,6 +331,9 @@ function getAllAnuncios(aid, tipo) {
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send("aid=" + aid);
 }
+
+ */
+/*
 
 function createBoxForAdmin(anuncio, src="images/house.png") {
     let box = document.createElement("div");
@@ -406,6 +429,9 @@ function createBoxForAdmin(anuncio, src="images/house.png") {
     return box;
 }
 
+
+ */
+/*
 function changesByAdmin(forms) {
     var xhttp = new XMLHttpRequest();
     let res = "";
@@ -422,7 +448,8 @@ function changesByAdmin(forms) {
     xhttp.send(res);
     return false;
 }
-
+ */
+/*
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -439,7 +466,9 @@ window.onclick = function(event) {
         }
     }
 }
+ */
 
+/*
 //função para pesquisar os anúncios de tipo oferta de um utilizador em específico
 function searchUserOffers(user) {
     var xhttp = new XMLHttpRequest();
@@ -457,6 +486,8 @@ function searchUserOffers(user) {
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send("tipo=oferta&anunciante=" + user);
 }
+ */
+/*
 
 //função para pesquisar os anúncios de tipo procura de um utilizador em específico
 function searchUserSearch(user) {
@@ -482,8 +513,10 @@ function createH2(tipo) {
     h2.innerHTML = tipo;
     return h2;
 }
+ */
 
 //função para mostrar o anúncio desejado do utilizador
+/*
 function createAnnouncementForUser(anuncio, src="images/house.png") {
     let box = document.createElement("div");
     box.classList.add("box");
@@ -529,8 +562,10 @@ function createAnnouncementForUser(anuncio, src="images/house.png") {
 
     return box;
 }
+ */
 
 //função para receber as mensagens do servidor do anúncio especificado
+/*
 function openAnnouncement(aid) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -542,3 +577,4 @@ function openAnnouncement(aid) {
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send("aid=" + aid);
 }
+ */

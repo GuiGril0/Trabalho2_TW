@@ -29,14 +29,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
                     .authorizeRequests()// , authorize request
                     .antMatchers("/admin*").authenticated()
-                    .antMatchers("/*").permitAll()
+					.antMatchers("/anunciar").access("hasRole('ROLE_USER')")
+                    .antMatchers("/*", "/static/**",
+							"/registuser",
+							"/procurar").permitAll()
                     .and()
                     .formLogin().loginPage("/login")// specifies the location of the log in page
                     .loginProcessingUrl("/j_spring_security_check")// login submit target
-                    .defaultSuccessUrl("/admin")// default-target-url,
+                    .defaultSuccessUrl("/")// default-target-url,
                     .failureUrl("/login?error")// authentication-failure-url,
                     .usernameParameter("username")// overrides Spring's default
                     .passwordParameter("password");
+		http.cors().and().csrf().disable();
 	}
 
 	@Bean

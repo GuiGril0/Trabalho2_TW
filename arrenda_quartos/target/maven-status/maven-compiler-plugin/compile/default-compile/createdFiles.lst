@@ -10,5 +10,4 @@ tw/backend/dao/UserDao.class
 tw/backend/dao/MessageDao.class
 tw/backend/config/ConnectionDB.class
 tw/backend/model/Ad.class
-tw/backend/controller/SpringAdController.class
 tw/backend/rowmapper/UserRowMapper.class

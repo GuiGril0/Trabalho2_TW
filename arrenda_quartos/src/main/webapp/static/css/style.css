@@ -6,7 +6,7 @@ html, body{
 header {
     background: linear-gradient(to right, whitesmoke, lightgray);
     width: 100%;
-    height: 80px;
+    height: 60px;
 
 }
 
@@ -38,7 +38,7 @@ header nav ul {
     list-style-type: none;
     text-decoration: none;
     position: relative;
-    top: calc(40px - (1em/2));
+    top: calc(20px - (1em/2));
 }
 header nav ul li{
     font-size: larger;
@@ -52,43 +52,47 @@ header nav ul li a {
 
 
 /* Corpo */
-.type {
-    margin-top: 5%;
-    margin-bottom: 2%;
-}
-
-.type #offer {
-    float: left;
-}
-
-.type #search {
-    float: right;
-}
-
 body {
     background: linear-gradient(to right, lightblue, violet);
+    position: relative;
+    min-height: 100vh;
 }
 main{
-   margin: 5%;
+    margin: 5%;
+    padding-bottom: 2.5rem;
 }
 img{
     width: 100%;
 }
-#ofertas{
-    width: 45%;
-    float: left;
-    margin-top: 7%;
-    clear: both;
+
+#offer {
+    margin-top: -5%;
+    margin-left: 5%;
+    text-align: center;
 }
+#search {
+    clear: both;
+    float: bottom;
+    text-align: center;
+}
+#ofertas{
+    width: 100%;
+    clear: both;
+    float: top;
+    margin-left: -3%;
+}
+
 #procuras{
-    width: 45%;
-    float: right;
-    margin-top: 7%;
+    width: 100%;
+    float: bottom;
+    margin-left: -3%;
 }
 
 #ofertas .box {
     background: linear-gradient(to right, cyan, deepskyblue);
-    width: 100%;
+    float: left;
+    width: 28%;
+    margin-left: 5%;
 }
 
 #ofertas a {
@@ -98,15 +102,25 @@ img{
 
 #ofertas .box ul {
     list-style-type: none;
+    overflow: auto;
 }
 
+#ofertas img {
+    width: 100%;
+    height: 14em;
+}
 
 #procuras img {
     width: 100%;
+    height: 14em;
 }
 
 #procuras .box {
     background: linear-gradient(to right, cyan, deepskyblue);
+    float: left;
+    width: 28%;
+    margin-left: 5%;
+    margin-bottom: -2%;
 }
 
 #procuras a {
@@ -119,37 +133,42 @@ img{
 }
 
 /* Rodapé */
-#ifooter {
+footer {
+    background: linear-gradient(to right, whitesmoke, lightgray);
     clear: both;
     width: 100%;
     position: relative;
-    bottom: calc(15px - (2em));
+    margin-top: 18.5%;
+    height: 2.5rem;
 }
 
-footer {
-    background: linear-gradient(to right, whitesmoke, lightgray);
+footer #sponsors {
+    font-size: medium;
+    float: left;
+    margin-top: -0.1em;
 }
-
-footer hr{
-    border: 1px solid black;
-    clear: both;
-}
-
-footer p{
-    font-size: smaller;
+footer #credits {
+    font-size: small;
     text-align: center;
+    float: bottom;
 }
 
 #pat img{
-    overflow: auto;
-    padding: 5px 5px;
-    height: 40px;
-
+    clear: both;
+    float: left;
+    padding: 2px 2px;
+    height: 30px;
+    margin-left: -42%;
+    margin-top: -2%;
 }
 
-/* procurar.html */
+#pat #ue {
+    margin-left: -39%;
+}
+
+/* procurar.jsp */
 #opcoes{
-   list-style-type: none;
+    list-style-type: none;
 }
 
 #ContentProcura input[type=text], select{
@@ -396,10 +415,7 @@ footer p{
 }
 
 #afooter {
-    position: relative;
-    bottom: calc(-35px - (40em));
-    width: 100%;
-    float: bottom;
+    bottom: calc(20em - (45em));
 }
 
 /* login.html */
@@ -453,13 +469,13 @@ footer p{
 
 #lfooter {
     position: relative;
-    bottom: calc(5px - (40em));
+    bottom: calc(2.1em - (19em));
 }
 
-/* utilizador.html */
+/* utilizador.jsp */
 #ufooter {
     position: relative;
-    bottom: calc(2px - 42em);
+    bottom: calc(19.8em - 45em);
 }
 
 /* anuncio_utilizador.html */
@@ -477,6 +493,43 @@ footer p{
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+}
+
+/*paginação*/
+.hidden {
+    display: none;
+}
+
+.pagination-container {
+    width: calc(100% - 2rem);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem 0;
+    justify-content: center;
+}
+
+.pagination-number,
+.pagination-button{
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    margin: 0.25rem 0.25rem;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: .2rem;
+}
+
+.pagination-number:hover,
+.pagination-button:not(.disabled):hover {
+    background: #fff;
+}
+
+.pagination-number.active {
+    color: #fff;
+    background: #0085b6;
 }
 
 @media screen and (max-width: 450px){

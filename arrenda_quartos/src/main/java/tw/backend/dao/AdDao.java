@@ -30,13 +30,13 @@ public class AdDao {
 
         return new ConnectionDB(props[0], props[1], props[2], props[3]);
     }
-    public List<Ad> getThreeRecentAds() throws Exception{
+    public List<Ad> getThreeRecentAds(String type) throws Exception{
         //jdbcTemplate.queryForList("select * from anuncios;");
         ConnectionDB db = setConnectionToDB();
         db.connectDb();
         Statement stmt = db.getStatement();
 
-        ResultSet rs = stmt.executeQuery("select * from advertisements ORDER BY date DESC LIMIT 3");
+        ResultSet rs = stmt.executeQuery("select * from advertisements WHERE typead LIKE '" + type + "' ORDER BY date DESC LIMIT 3");
 
         List<Ad> threeAds = new ArrayList<Ad>();
         while(rs.next()) {
@@ -66,12 +66,17 @@ public class AdDao {
         db.connectDb();
         Statement stmt = db.getStatement();
 
+
         String[] aux = fields.split("&");
         String response = "";
         for(String i : aux) {
             String[] values = i.split("=");
-            if(values[0].equals("typead"))
-                response += values[0] + " LIKE " + values[1];
+            if(values[0].equals("aid") || values[0].equals("typead")) {
+                if(values[0].equals("typead"))
+                    response += values[0] + " LIKE '" + values[1] + "'";
+                else
+                    response += values[0] + "=" + values[1];
+            }
             else {
                 response += values[0] + " LIKE '%";
                 for(int j=1; j < values.length; j++)

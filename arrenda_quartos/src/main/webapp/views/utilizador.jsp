@@ -6,12 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/alasql@2"></script>
     <script src="/static/script/script.js"></script>
-    <title>Arrendamento e procura de alojamentos</title>
 </head>
 <body>
-<header>
+<header id="uheader">
     <a href="/" id="homePage"> Arrenda || Procura</a>
     <nav class="dropdown">
         <img class="dropbutton" src="/static/images/menu.svg" alt="menu" onclick="myFunction()">
@@ -19,26 +17,16 @@
         <ul id="myDropdown" class="dropdown-content">
             <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
+            <li><a href="/login" >Login</a></li>
+            <li><a href="/registuser">Registar</a></li>
         </ul>
     </nav>
 </header>
-<main>
 
-    <h2 id="offer">Ofertas</h2>
+<div id="userO"></div>
+<div id="userP"></div>
 
-    <div id="ofertas">
-        ${adso}
-    </div>
-
-    <h2 id="search">Procuras</h2>
-
-    <div id="procuras">
-        ${adsp}
-    </div>
-
-</main>
-
-<footer id="ifooter">
+<footer id="ufooter">
     <p> Patrocinadores:</p>
     <div id="pat">
         <img src="/static/images/aston.svg" alt="aston martin">
@@ -48,5 +36,6 @@
     <hr>
     <p>Developed by Guilherme Grilo e Helder Godinho</p>
 </footer>
+
 </body>
 </html>
