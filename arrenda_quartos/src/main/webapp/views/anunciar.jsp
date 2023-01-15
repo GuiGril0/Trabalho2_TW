@@ -16,10 +16,9 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
         <img class="dropbutton" src="/static/images/menu.svg" alt="menu" onclick="myFunction()">
         <!---<img src="images/menu.svg" alt="menu">--->
         <ul id="myDropdown" class="dropdown-content">
-            <li><a href="procurar.jsp">Procurar</a></li>
+            <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
-            <li><a href="/login" >Login</a></li>
-            <li><a href="/registuser">Registar</a></li>
+            ${h}
         </ul>
     </nav>
 </header>
@@ -36,7 +35,6 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
                 </select>
             </label>
         </li>
-        <li><label>Nome: <input type="text" name="advertiser"></label></li>
         <li><label>Localização: <input type="text" name="localad"></label></li>
         <li><label>Tipo de alojamento: <input type="text" name="typology"></label></li>
         <li><label>Género: <input type="text" name="gender"></label></li>

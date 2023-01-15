@@ -17,14 +17,12 @@
         <ul id="myDropdown" class="dropdown-content">
             <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
-            <li><a href="/login" >Login</a></li>
-            <li><a href="/registuser">Registar</a></li>
+            ${h}
         </ul>
     </nav>
 </header>
 
-<div id="userO"></div>
-<div id="userP"></div>
+<div id="userads">${user}</div>
 
 <footer id="ufooter">
     <p> Patrocinadores:</p>

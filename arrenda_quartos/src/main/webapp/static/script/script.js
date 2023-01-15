@@ -449,7 +449,7 @@ function changesByAdmin(forms) {
     return false;
 }
  */
-/*
+
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -466,7 +466,6 @@ window.onclick = function(event) {
         }
     }
 }
- */
 
 /*
 //função para pesquisar os anúncios de tipo oferta de um utilizador em específico

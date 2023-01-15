@@ -6,6 +6,7 @@ public class Message {
     private String sender;
     private String content;
     private Date date;
+    private int ad_aid;
 
     public Message() { date = new Date(System.currentTimeMillis()); }
 
@@ -21,6 +22,8 @@ public class Message {
     }
 
     public void setDate(Date date) { this.date = date; }
+
+    public void setAd_aid(int ad_aid) { this.ad_aid = ad_aid; }
     /* gets */
 
     public String getSender() {
@@ -34,4 +37,6 @@ public class Message {
     public Date getDate() {
         return date;
     }
+
+    public int getAd_aid() { return ad_aid; }
 }

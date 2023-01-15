@@ -71,8 +71,8 @@ public class AdDao {
         String response = "";
         for(String i : aux) {
             String[] values = i.split("=");
-            if(values[0].equals("aid") || values[0].equals("typead")) {
-                if(values[0].equals("typead"))
+            if(values[0].equals("aid") || values[0].equals("typead") || values[0].equals("advertiser")) {
+                if(values[0].equals("typead") || values[0].equals("advertiser"))
                     response += values[0] + " LIKE '" + values[1] + "'";
                 else
                     response += values[0] + "=" + values[1];
@@ -110,5 +110,72 @@ public class AdDao {
 
         db.closeConnection();
         return ads;
+    }
+
+    public int insertAd(Ad ad) throws Exception{
+        ConnectionDB db = setConnectionToDB();
+        db.connectDb();
+        Statement stmt = db.getStatement();
+
+        stmt.execute("insert into advertisements values ('"
+                +ad.getAdvertiser()+ "', " +
+                "'" +ad.getType()+ "', " +
+                "'" +ad.getState()+ "', "+
+                ad.getPrice() +
+                ", '" +ad.getGender()+ "', " +
+                "'" +ad.getLocal()+ "', " +
+                "'" +ad.getTypology()+ "', " +
+                "'" +ad.getEmail()+ "', " +
+                "'" +ad.getDate()+ "', " +
+                "'" +ad.getDescription()+ "' );");
+
+        ResultSet rs = stmt.executeQuery("SELECT MAX(aid) AS number FROM advertisements");
+        rs.next();
+        int aid = rs.getInt("number");
+        db.closeConnection();
+
+        return aid;
+    }
+
+    public List<Ad> getAllAds() throws Exception{
+        ConnectionDB db = setConnectionToDB();
+        db.connectDb();
+        Statement stmt = db.getStatement();
+
+        ResultSet rs = stmt.executeQuery("select * from advertisements");
+        List<Ad> ads = new ArrayList<>();
+        while(rs.next()) {
+            Ad ad = new Ad(0);
+
+            ad.setAdvertiser(rs.getString("advertiser"));
+            ad.setType(rs.getString("typead"));
+            ad.setState(rs.getString("statead"));
+            ad.setPrice(rs.getDouble("price"));
+            ad.setGender(rs.getString("gender"));
+            ad.setLocal(rs.getString("localad"));
+            ad.setTypology(rs.getString("typology"));
+            ad.setEmail(rs.getString("email"));
+            ad.setDate(rs.getDate("date"));
+            ad.setDescription(rs.getString("description"));
+            ad.setAid(rs.getInt("aid"));
+
+            ads.add(ad);
+        }
+        db.closeConnection();
+        return ads;
+    }
+
+    public boolean changeState(String state, String aid) throws Exception{
+        ConnectionDB db = setConnectionToDB();
+        db.connectDb();
+        Statement stmt = db.getStatement();
+
+        ResultSet rs = stmt.executeQuery("select statead from advertisements WHERE aid=" + aid + ";");
+        rs.next();
+        if(state.equals(rs.getString("statead")))
+            return false;
+        stmt.executeUpdate("UPDATE advertisements SET statead='" + state + "' WHERE aid=" + aid + ";");
+        db.closeConnection();
+        return true;
     }
 }

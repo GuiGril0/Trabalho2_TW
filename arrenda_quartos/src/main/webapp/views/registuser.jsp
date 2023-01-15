@@ -19,8 +19,7 @@
         <ul id="myDropdown" class="dropdown-content">
             <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
-            <li><a href="/login" >Login</a></li>
-            <li><a href="/registuser">Registar</a></li>
+            ${h}
         </ul>
     </nav>
 </header>
@@ -33,6 +32,7 @@
     </ul>
     <input type="submit" value="Registar">
 </form>
+<h1 id="msg">${msg}</h1>
 </body>
 <footer id="rufooter">
     <p> Patrocinadores:</p>

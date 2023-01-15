@@ -32,7 +32,7 @@ public class MessageDao {
         db.connectDb();
         Statement stmt = db.getStatement();
 
-        ResultSet rs = stmt.executeQuery("select * from messages WHERE aid=" + aid + " ORDER BY date DESC");
+        ResultSet rs = stmt.executeQuery("select * from messages WHERE ad_aid=" + aid + " ORDER BY date DESC");
 
         List<Message> msgs = new ArrayList<Message>();
         while(rs.next()) {
@@ -45,5 +45,17 @@ public class MessageDao {
         }
         db.closeConnection();
         return msgs;
+    }
+
+    public void insertMessage(Message msg) throws Exception{
+        ConnectionDB db = setConnectionToDB();
+        db.connectDb();
+        Statement stmt = db.getStatement();
+
+        stmt.execute("insert into messages values ('" + msg.getSender() +
+                "', '" + msg.getContent() +
+                "', '" + msg.getDate() +
+                "', " + msg.getAd_aid() + ");");
+        db.closeConnection();
     }
 }

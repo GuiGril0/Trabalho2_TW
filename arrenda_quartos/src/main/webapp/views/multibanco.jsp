@@ -1,6 +1,7 @@
 <%@ page language="java" session="true"
          contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,22 +24,10 @@
     </nav>
 </header>
 <main>
-
-    <h2 id="offer">Ofertas</h2>
-
-    <div id="ofertas">
-        ${adso}
-    </div>
-
-    <h2 id="search">Procuras</h2>
-
-    <div id="procuras">
-        ${adsp}
-    </div>
-
+<h1>${msg}</h1>
+${pay}
 </main>
-
-<footer id="ifooter">
+<footer id="mbfooter">
     <p> Patrocinadores:</p>
     <div id="pat">
         <img src="/static/images/aston.svg" alt="aston martin">
