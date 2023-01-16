@@ -1,37 +1,29 @@
 <%@ page language="java" session="true"
-contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/script/script.js"></script>
-    <title>Autenticação</title>
+    <title>Arrendamento e procura de alojamentos</title>
 </head>
 <body>
 <header>
-    <a href="/index" id="homePage"> Arrenda || Procura</a>
+    <a href="/" id="homePage"> Arrenda || Procura</a>
     <nav class="dropdown">
-        <img class="dropbutton" src="/static/images/menu.svg" alt="menu" onclick="myFunction()">
+        <img class="dropbutton" src="images/menu.svg" alt="menu" onclick="myFunction()">
         <!---<img src="images/menu.svg" alt="menu">--->
         <ul id="myDropdown" class="dropdown-content">
-            <li><a href="procurar.jsp">Procurar</a></li>
+            <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
-            <li><a href="/login" >Login</a></li>
+            ${h}
         </ul>
     </nav>
 </header>
-
-<div id="login">
-  <h2>Autenticação</h2>
-  <ul>
-    <li><label>Nome de utilizador: <input type="text" name="user"></label></li>
-    <li><label>Palavra-passe: <input type="password"></label></li>
-  </ul>
-    <input type="submit" value="Entrar">
-</div>
-<footer id="lfooter">
+<footer id="anufooter">
     <p> Patrocinadores:</p>
     <div id="pat">
         <img src="/static/images/aston.svg" alt="aston martin">

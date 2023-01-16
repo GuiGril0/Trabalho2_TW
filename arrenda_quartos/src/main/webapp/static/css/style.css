@@ -130,6 +130,7 @@ img{
 
 #procuras .box ul {
     list-style-type: none;
+    overflow: auto;
 }
 
 /* Rodapé */
@@ -416,60 +417,6 @@ footer #credits {
 
 #afooter {
     bottom: calc(20em - (45em));
-}
-
-/* login.html */
-#login ul {
-    list-style-type: none;
-}
-
-#login{
-    width: 600px;
-    margin: auto;
-    text-align: center;
-    padding: 20px;
-    border-style: solid;
-    border-color: #B6C7D6;
-    border-radius: 20px;
-    background-color: #EAF0F6;
-}
-
-#login h2{
-    text-align: center;
-}
-
-#login ul{
-    justify-content: center;
-    font-size: larger;
-    margin-top: 4%;
-}
-
-#login input[type=submit]{
-    font-size: large;
-    width:auto;
-    height: auto;
-    margin: auto;
-}
-
-#login input[type=text]{
-    border-radius: 9px;
-    border-color: black;
-    padding-left: 10px;
-    font-size: large;
-    height: auto;
-}
-#login input[type=password]{
-    border-radius: 9px;
-    border-color: black;
-    padding-left: 10px;
-    font-size: large;
-    height: auto;
-    margin-top: 10px;
-}
-
-#lfooter {
-    position: relative;
-    bottom: calc(2.1em - (19em));
 }
 
 /* utilizador.jsp */

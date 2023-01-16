@@ -1,3 +1,4 @@
+tw/backend/controller/SpringController.class
 tw/backend/config/SecurityConfig.class
 tw/backend/controller/SpringSecurityController.class
 tw/backend/SpringSecurityFormBasedJdbcUserDetailsServiceAuthApp.class

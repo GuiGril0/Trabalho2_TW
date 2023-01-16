@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/script/script.js"></script>
-    <title>Anúncio</title>
+    <title>Arrendamento e procura de alojamentos</title>
 </head>
 <body>
 <header>

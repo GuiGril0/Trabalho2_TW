@@ -2,6 +2,7 @@
 /home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/config/ConnectionDB.java
 /home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/dao/MessageDao.java
 /home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/controller/SpringSecurityController.java
+/home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/controller/SpringController.java
 /home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/SpringSecurityFormBasedJdbcUserDetailsServiceAuthApp.java
 /home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/model/Ad.java
 /home/gui/IdeaProjects/Trabalho2_TW/arrenda_quartos/src/main/java/tw/backend/dao/UserDao.java

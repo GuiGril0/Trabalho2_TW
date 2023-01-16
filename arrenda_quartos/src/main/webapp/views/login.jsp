@@ -6,6 +6,7 @@
 <title>Spring Security Basic - Form Based JDBC Authentication</title>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/static/css/style.css"/>" />
+	<title>Arrendamento e procura de alojamentos</title>
 </head>
 <body>
 	<header>

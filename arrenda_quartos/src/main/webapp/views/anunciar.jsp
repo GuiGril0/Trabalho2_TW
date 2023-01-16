@@ -7,7 +7,7 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/static/script/script.js"></script>
     <link rel="stylesheet" href="/static/css/style.css">
-    <title>Formulário para anúncio de oferta</title>
+    <title>Arrendamento e procura de alojamentos</title>
 </head>
 <body>
 <header>

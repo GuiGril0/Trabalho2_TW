@@ -41,39 +41,15 @@ public class UserDao {
 
         return new ConnectionDB(props[0], props[1], props[2], props[3]);
     }
-/*
-    public User getUser(String username) throws Exception{
-        ConnectionDB db = setConnectionToDB();
-        db.connectDb();
-        Statement stmt = db.getStatement();
-
-        ResultSet rs = stmt.executeQuery("select * from clients WHERE user_name LIKE '" + username + "'");
-        rs.next();
-        User u = new User();
-        u.setUsername(rs.getString("user_name"));
-        u.setPassword(rs.getString("user_pass"));
-        u.setEmail(rs.getString("user_email"));
-
-        rs = stmt.executeQuery("select user_role from user_role WHERE user_name LIKE '" + username + "'");
-        rs.next();
-        u.setRole(rs.getString("user_role"));
-
-        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(u.getRole());
-
-        return u;
-    }
-*/
     public void saveUser(final User u) {
         String sql = "INSERT INTO user VALUES ('"
                 + u.getUsername() + "','"
                 + u.getPassword() + "','"
                 + u.getEmail() + "',0)";   // 0 == not enabled
         jdbcTemplate.execute(sql);
-        System.out.println("UserDao - saved\n" + sql + "\n");
     }
 
     public List<String> getUsernameList() {
         return jdbcTemplate.queryForList("select user_name FROM user", String.class);
     }
-
 }

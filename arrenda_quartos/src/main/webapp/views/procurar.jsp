@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/script/script.js"></script>
-    <title>Procurar anúncio</title>
+    <title>Arrendamento e procura de alojamentos</title>
 </head>
 <body>
 <header>
@@ -24,7 +24,7 @@
 </header>
 <div id="ContentProcura">
     <h2>Procurar</h2>
-<form action="/procurar" method="POST">
+<form action="/procurar" method="GET">
     <ul id="opcoes">
         <li>
             <label>Tipo:
