@@ -29,7 +29,7 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     <ul id="anunciaul">
         <li>
             <label>Tipo:
-                <select name="tipo">
+                <select name="typead">
                     <option value="oferta">Oferta</option>
                     <option value="procura">Procura</option>
                 </select>
@@ -37,7 +37,15 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
         </li>
         <li><label>Localização: <input type="text" name="localad"></label></li>
         <li><label>Tipo de alojamento: <input type="text" name="typology"></label></li>
-        <li><label>Género: <input type="text" name="gender"></label></li>
+        <li>
+            <label>Género:
+                <select name="gender">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="indiferente">Indiferente</option>
+                </select>
+            </label>
+        </li>
         <li><label>Preço: <input type="number" min="0" value="0" name="price" step=".01"></label></li>
         <li><label>Contacto: <input type="text" name="email"></label></li>
         <li><label>Detalhes: <input type="text" name="description"></label></li>

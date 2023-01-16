@@ -270,25 +270,23 @@ public class SpringController {
 
     @PostMapping("/anunciar")
     public String submitNewAdd(Model model, HttpServletRequest request,
-                               @RequestParam(value = "tipo", required = true) String type,
-                               @RequestParam(value = "advertiser", required = true) String advertiser,
+                               @RequestParam(value = "typead", required = true) String type,
                                @RequestParam(value = "localad", required = true) String local,
                                @RequestParam(value = "typology", required = true) String typology,
                                @RequestParam(value = "gender", required = true) String gender,
                                @RequestParam(value = "price", required = true) Double price,
                                @RequestParam(value = "email", required = true) String email,
-                               @RequestParam(value = "description", required = false) String description
+                               @RequestParam(value = "description", required = true) String description
     ) throws Exception{
         String username = request.getRemoteUser();
         User u = userDao.getUser(username);
         model.addAttribute("h", "<li>" +
                 "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
-        if((advertiser.length() == 0 || advertiser == null) ||
-                (local.length() == 0 || local == null) ||
-                (typology.length() == 0 || typology == null) ||
-                (gender.length() == 0 || gender == null) ||
-                (price <= 0.0 || price == null) ||
-                (email.length() == 0 || email == null)) {
+        if(local.length() == 0 ||
+                typology.length() == 0 ||
+                gender.length() == 0 ||
+                price <= 0.0 ||
+                email.length() == 0 ) {
             model.addAttribute("msg", "<h3>Campos em falta! Anúncio não registado!</h3>");
             return "anunciar";
             //tratar de campos necessários em falta. ERRO, não coloca na bd!
@@ -316,11 +314,6 @@ public class SpringController {
                     return "anunciar";
                 }
                 typology = t + Integer.toString(aux);
-            }
-            gender = gender.toLowerCase();
-            if(!gender.equals("masculino") || !gender.equals("feminino") || !gender.equals("indiferente")) {
-                model.addAttribute("msg", "<h3>Campo género indicado no formato errado!</h3> <h3>Anúncio não registado!</h3>");
-                return "anunciar";
             }
             if(price < 0.0) {
                 model.addAttribute("msg", "<h3>Campo preço indicado no formato errado!</h3> <h3>Anúncio não registado!</h3>");
@@ -433,7 +426,7 @@ public class SpringController {
         return "procurar";
     }
 
-    @GetMapping("/procurar")
+    @PostMapping("/procurar")
     public String getSearchAds(Model model, HttpServletRequest request,
                                @RequestParam(value = "page", defaultValue = "1", required = true) int page,
                                @RequestParam(value = "typead", required = true) String type,
@@ -449,6 +442,7 @@ public class SpringController {
             User u = userDao.getUser(username);
             model.addAttribute("h", "<li>" +
                     "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            System.out.println("ola");
         }
         AdDao adDao = new AdDao();
         String fields = "typead=" + type;
@@ -479,7 +473,6 @@ public class SpringController {
         model.addAttribute("ads", sb.toString());
         return "procurar";
     }
-
 
     @GetMapping("/utilizador")
     public String UserPage(Model model, HttpServletRequest request) throws Exception{

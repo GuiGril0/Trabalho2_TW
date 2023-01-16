@@ -13,7 +13,7 @@
 <header>
     <a href="/" id="homePage"> Arrenda || Procura</a>
     <nav class="dropdown">
-        <img class="dropbutton" src="images/menu.svg" alt="menu" onclick="myFunction()">
+        <img class="dropbutton" src="/static/images/menu.svg" alt="menu" onclick="myFunction()">
         <!---<img src="images/menu.svg" alt="menu">--->
         <ul id="myDropdown" class="dropdown-content">
             <li><a href="/procurar">Procurar</a></li>
@@ -24,7 +24,7 @@
 </header>
 <div id="ContentProcura">
     <h2>Procurar</h2>
-<form action="/procurar" method="GET">
+<form action="/procurar" method="POST">
     <ul id="opcoes">
         <li>
             <label>Tipo:
