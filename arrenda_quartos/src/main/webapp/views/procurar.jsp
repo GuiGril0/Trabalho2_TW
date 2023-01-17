@@ -40,9 +40,16 @@
     <input type="submit" value="Pesquisar">
 </form>
 </div>
+<main>
 <div id="resultados" >
 ${ads}
 </div>
+    <div id="arrows">
+        <button><<i class="left"></i></button>
+        ${pages}
+        <button>><i class="right"></i></button>
+    </div>
+</main>
 <footer id="pfooter">
     <p> Patrocinadores:</p>
     <div id="pat">

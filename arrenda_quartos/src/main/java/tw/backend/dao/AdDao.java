@@ -71,8 +71,8 @@ public class AdDao {
         String response = "";
         for(String i : aux) {
             String[] values = i.split("=");
-            if(values[0].equals("aid") || values[0].equals("typead") || values[0].equals("advertiser")) {
-                if(values[0].equals("typead") || values[0].equals("advertiser"))
+            if(values[0].equals("statead") || values[0].equals("aid") || values[0].equals("typead") || values[0].equals("advertiser")) {
+                if(values[0].equals("typead") || values[0].equals("advertiser") || values[0].equals("statead"))
                     response += values[0] + " LIKE '" + values[1] + "'";
                 else
                     response += values[0] + "=" + values[1];

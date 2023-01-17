@@ -5,9 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import tw.backend.config.ConnectionDB;
 import tw.backend.dao.AdDao;
 import tw.backend.dao.MessageDao;
@@ -58,8 +56,13 @@ public class SpringController {
         }
         else {
             User u = userDao.getUser(username);
-            model.addAttribute("h", "<li>" +
-                    "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            if(u.getRole().equals("ROLE_USER")) {
+                model.addAttribute("h", "<li>" +
+                        "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            }
+            else if(u.getRole().equals("ROLE_ADMIN")) {
+                model.addAttribute("h", "<li><a href=\"/admin\">Olá, " + u.getUsername() + "</a></li>");
+            }
         }
         AdDao adDao = new AdDao();
         List<Ad> ads = adDao.getThreeRecentAds("oferta");
@@ -112,8 +115,13 @@ public class SpringController {
         }
         else {
             u = userDao.getUser(username);
-            model.addAttribute("h", "<li>" +
-                    "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            if(u.getRole().equals("ROLE_USER")) {
+                model.addAttribute("h", "<li>" +
+                        "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            }
+            else if(u.getRole().equals("ROLE_ADMIN")) {
+                model.addAttribute("h", "<li><a href=\"/admin\">Olá, " + u.getUsername() + "</a></li>");
+            }
         }
         AdDao adDao = new AdDao();
         aid = "aid=" + aid;
@@ -162,11 +170,26 @@ public class SpringController {
                                     @RequestParam(value = "sender", required = false) String sender,
                                     @RequestParam(value = "content", required = false) String content,
                                     @RequestParam(value = "aid", required = true) String aid) throws Exception{
+        String username = request.getRemoteUser();
+        if(username == null) {
+            model.addAttribute("h", "<li>" +
+                    "<a href=\"/login\">Login</a></li>" +
+                    "<li><a href=\"/registuser\">Registar</a></li>");
+        }
+        else {
+            User u = userDao.getUser(username);
+            if(u.getRole().equals("ROLE_USER")) {
+                model.addAttribute("h", "<li>" +
+                        "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            }
+            else if(u.getRole().equals("ROLE_ADMIN")) {
+                model.addAttribute("h", "<li><a href=\"/admin\">Olá, " + u.getUsername() + "</a></li>");
+            }
+        }
         StringBuilder sb = new StringBuilder();
         AdDao adDao = new AdDao();
         List<Ad> ads = adDao.getAdsByFields("aid=" + aid);
         Ad ad = ads.get(0);
-        String username = request.getRemoteUser();
         sb.append("<div class=box>" +
                 "<img src=\"/static/images/house.png\">" +
                 "<div id=" + ad.getAid() + ">" +
@@ -279,6 +302,16 @@ public class SpringController {
                                @RequestParam(value = "description", required = true) String description
     ) throws Exception{
         String username = request.getRemoteUser();
+        if(username == null) {
+            model.addAttribute("h", "<li>" +
+                    "<a href=\"/login\">Login</a></li>" +
+                    "<li><a href=\"/registuser\">Registar</a></li>");
+        }
+        else {
+            User u = userDao.getUser(username);
+            model.addAttribute("h", "<li>" +
+                    "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+        }
         User u = userDao.getUser(username);
         model.addAttribute("h", "<li>" +
                 "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
@@ -420,8 +453,13 @@ public class SpringController {
         }
         else {
             User u = userDao.getUser(username);
-            model.addAttribute("h", "<li>" +
-                    "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            if(u.getRole().equals("ROLE_USER")) {
+                model.addAttribute("h", "<li>" +
+                        "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            }
+            else if(u.getRole().equals("ROLE_ADMIN")) {
+                model.addAttribute("h", "<li><a href=\"/admin\">Olá, " + u.getUsername() + "</a></li>");
+            }
         }
         return "procurar";
     }
@@ -440,9 +478,13 @@ public class SpringController {
         }
         else {
             User u = userDao.getUser(username);
-            model.addAttribute("h", "<li>" +
-                    "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
-            System.out.println("ola");
+            if(u.getRole().equals("ROLE_USER")) {
+                model.addAttribute("h", "<li>" +
+                        "<a href=\"/utilizador\">Olá, " + u.getUsername() + "</a></li>");
+            }
+            else if(u.getRole().equals("ROLE_ADMIN")) {
+                model.addAttribute("h", "<li><a href=\"/admin\">Olá, " + u.getUsername() + "</a></li>");
+            }
         }
         AdDao adDao = new AdDao();
         String fields = "typead=" + type;
@@ -455,7 +497,8 @@ public class SpringController {
         if(ads.size() == 0)
             sb.append("<h3>Não foram encontrados anúncios!</h3>");
         else {
-            for (Ad ad : ads) {
+            for(int i=4*page-4; i<4*page-1; i++) {
+                Ad ad = ads.get(i);
                 sb.append("<div class=box>" +
                         "<a href=\"/anuncio?aid=" + ad.getAid() + "\">" +
                         "<img src=\"/static/images/house.png\">" +
@@ -471,6 +514,7 @@ public class SpringController {
             }
         }
         model.addAttribute("ads", sb.toString());
+        model.addAttribute("pages", "<p>" + page + " de " + Math.ceil(ads.size()/4) + "</p>");
         return "procurar";
     }
 
@@ -546,44 +590,58 @@ public class SpringController {
             }
 
         }
-        else if(u.getRole().equals("ROLE_ADMIN")) {
-            StringBuilder sb = new StringBuilder();
-            AdDao adDao = new AdDao();
-            List<Ad> ads = adDao.getAllAds();
-            for (Ad ad : ads) {
-                sb.append("<div class=box>" +
-                        "<img src=\"/static/images/house.png\">" +
-                        "<div id=\"" + ad.getAid() + "\">" +
-                        "<ul> <li>Anunciante: " + ad.getAdvertiser() + "</li>" +
-                        "<li>Localização: " + ad.getLocal() + "</li>" +
-                        "<li>Género: " + ad.getGender() + "</li>" +
-                        "<li>Tipo de alojamento: " + ad.getTypology() + "</li>" +
-                        "<li>Preço: " + ad.getPrice() + "</li>" +
-                        "</ul>" +
-                        "</div>" +
-                        "<form action=\"utilizador\" method=\"POST\">" +
-                        "<label id=\"changeform\">" +
-                        "<select name=\"state\">" +
-                        "<option value=\"ativo\">Ativo</option>" +
-                        "<option value\"inativo\">Inativo</option>" +
-                        "</select>" +
-                        "<input type=\"hidden\" name=\"aid\" value=\"" + ad.getAid() + "\">" +
-                        "</label>" +
-                        "<input type=\"submit\" value=\"Alterar\"" +
-                        "</form> </div>"
-                );
-            }
-            model.addAttribute("user", sb.toString());
-        }
         return "utilizador";
     }
 
-    @PostMapping("/utilizador")
-    public String changeState(Model model,
-                              @RequestParam(value = "aid", required = true) String aid,
-                              @RequestParam(value = "state", required = true) String state) throws Exception{
+    @RequestMapping(value = "/admin")
+    public String adminPage(Model model) {
+        model.addAttribute("h", "<li>" +
+                "<a href=\"/logout\">Logout</a></li>");
+        return "admin";
+    }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET, params = "state")
+    public String getAdByState(Model model, HttpServletRequest request,
+                               @RequestParam String state) throws Exception {
+        model.addAttribute("h", "<li>" +
+                "<a href=\"/logout\">Logout</a></li>");
         AdDao adDao = new AdDao();
-        List<Ad> ads = adDao.getAdsByFields("aid=" + aid);
+        StringBuilder sb = new StringBuilder();
+        List<Ad> ads = adDao.getAdsByFields("statead=" + state);
+        for (int i = 0; i < ads.size(); i++) {
+            Ad ad = ads.get(i);
+            sb.append("<div class=box>" +
+                    "<img src=\"/static/images/house.png\">" +
+                    "<div id=\"" + ad.getAid() + "\">" +
+                    "<ul> <li>Anunciante: " + ad.getAdvertiser() + "</li>" +
+                    "<li>Localização: " + ad.getLocal() + "</li>" +
+                    "<li>Género: " + ad.getGender() + "</li>" +
+                    "<li>Tipo de alojamento: " + ad.getTypology() + "</li>" +
+                    "<li>Preço: " + ad.getPrice() + "</li>" +
+                    "</ul>" +
+                    "</div>" +
+                    "<form id=\"changeadstate\" action=\"/admin\" method=\"POST\">" +
+                    "<select name=\"state\">" +
+                    "<option value=\"ativo\">Ativo</option>" +
+                    "<option value=\"inativo\">Inativo</option>" +
+                    "</select>" +
+                    "<input type=\"hidden\" name=\"aid\" value=\"" + ad.getAid() + "\">" +
+                    "<input type=\"submit\" value=\"Alterar\">" +
+                    "</form> </div>"
+            );
+        }
+        model.addAttribute("admin", sb.toString());
+        return "admin";
+    }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.POST, params = {"aid", "state"})
+    public String changeState(Model model,
+                              @RequestParam String aid,
+                              @RequestParam String state) throws Exception {
+        model.addAttribute("h", "<li>" +
+                "<a href=\"/logout\">Logout</a></li>");
+        AdDao adDao = new AdDao();
+        List<Ad> ads = adDao.getAdsByFields("statead=" + state);
         StringBuilder sb = new StringBuilder();
         for (Ad ad : ads) {
             sb.append("<div class=box>" +
@@ -608,12 +666,11 @@ public class SpringController {
                     "</form> </div>"
             );
         }
-
-        if(adDao.changeState(state, aid))
+        if (adDao.changeState(state, aid))
             sb.append("<h3>Estado do anúncio alterado para " + state + "com sucesso!</h3>");
         else
             sb.append("<h3>Estado do anúncio não foi alterado!</h3>");
-        model.addAttribute("user", sb.toString());
-        return "utilizador";
+        model.addAttribute("admin", sb.toString());
+        return "admin";
     }
 }
