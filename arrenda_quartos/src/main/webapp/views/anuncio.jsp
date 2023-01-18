@@ -22,21 +22,25 @@
         </ul>
     </nav>
 </header>
-<div id="TituloAnuncio"><h2>Anúncio</h2>
-</div>
 
-<div id="anu">
-${ad}
-</div>
-<footer id="anufooter">
-    <p> Patrocinadores:</p>
-    <div id="pat">
-        <img src="/static/images/aston.svg" alt="aston martin">
-        <img src="/static/images/uelogo.svg" alt="UE">
+<main>
+    <div class="main-div">
+        <div id="TituloAnuncio"><h2>Anúncio</h2></div>
+        <div class="content" id="AdBox">
+            <div id="anu">
+                ${ad}
+            </div>
+        </div>
+        <div class="footer">
+            <div id="pat">
+                <p>Patrocinadores</p>
+                <img src="/static/images/aston.svg" alt="aston martin">
+                <img src="/static/images/uelogo.svg" alt="UE">
+            </div>
+            <hr>
+            <p>Developed by Guilherme Grilo e Helder Godinho</p>
+        </div>
     </div>
-
-    <hr>
-    <p>Developed by Guilherme Grilo e Helder Godinho</p>
-</footer>
+</main>
 </body>
 </html>

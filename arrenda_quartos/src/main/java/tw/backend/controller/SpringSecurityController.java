@@ -45,15 +45,4 @@ public class SpringSecurityController {
         model.addAttribute("message", "This page demonstrates how to use Spring security");
         return "admin";
     }
-/*
-    @GetMapping("/error")
-    public String treatErrors(Model model, HttpServletRequest request) {
-        Object aux = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        int errorCode = Integer.parseInt(aux.toString());
-        if(errorCode == 404){
-
-        }
-        return "error";
-    }
-*/
 }

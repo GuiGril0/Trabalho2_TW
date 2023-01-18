@@ -11,6 +11,7 @@
     <title>Arrendamento e procura de alojamentos</title>
 </head>
 <html>
+<body>
 <header>
     <a href="/" id="homePage"> Arrenda || Procura</a>
     <nav class="dropdown">
@@ -23,25 +24,30 @@
         </ul>
     </nav>
 </header>
-<body>
-<form action="\registuser" method="POST">
-    <ul id="registo">
-        <li><label>Username: <input type="text" name="user_name"></label></li>
-        <li><label>Email: <input type="text" name="user_email"></label></li>
-        <li><label>Password: <input type="password" name="user_pass"></label></li>
-    </ul>
-    <input type="submit" value="Registar">
-</form>
-<h1 id="msg">${msg}</h1>
-</body>
-<footer id="rufooter">
-    <p> Patrocinadores:</p>
-    <div id="pat">
-        <img src="/static/images/aston.svg" alt="aston martin">
-        <img src="/static/images/uelogo.svg" alt="UE">
+<main>
+    <div class="main-div">
+        <div class="content">
+            <form class="ContentBox" action="\registuser" method="POST">
+                <h2>Registar</h2>
+                <ul>
+                    <li><label>Username: <input type="text" name="user_name"></label></li>
+                    <li><label>Email: <input type="text" name="user_email"></label></li>
+                    <li><label>Password: <input type="password" name="user_pass"></label></li>
+                </ul>
+                <input type="submit" value="Registar">
+            </form>
+            <h1 id="msg">${msg}</h1>
+        </div>
+        <div class="footer">
+            <div id="pat">
+                <p>Patrocinadores</p>
+                <img src="/static/images/aston.svg" alt="aston martin">
+                <img src="/static/images/uelogo.svg" alt="UE">
+            </div>
+            <hr>
+            <p>Developed by Guilherme Grilo e Helder Godinho</p>
+        </div>
     </div>
-
-    <hr>
-    <p>Developed by Guilherme Grilo e Helder Godinho</p>
-</footer>
+</main>
+</body>
 </html>

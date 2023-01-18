@@ -23,30 +23,32 @@
     </nav>
 </header>
 <main>
+    <div class="main-div">
+        <div class="content">
+            <h2 id="offer">Ofertas</h2>
 
-    <h2 id="offer">Ofertas</h2>
+            <div id="ofertas">
+                ${adso}
+            </div>
 
-    <div id="ofertas">
-        ${adso}
+            <h2 id="search">Procuras</h2>
+
+            <div id="procuras">
+                ${adsp}
+            </div>
+        </div>
+
+        <div class="footer">
+            <div id="pat">
+                <p>Patrocinadores</p>
+                <img src="/static/images/aston.svg" alt="aston martin">
+                <img src="/static/images/uelogo.svg" alt="UE">
+            </div>
+            <hr>
+            <p>Developed by Guilherme Grilo e Helder Godinho</p>
+        </div>
     </div>
-
-    <h2 id="search">Procuras</h2>
-
-    <div id="procuras">
-        ${adsp}
-    </div>
-
 </main>
 
-<footer id="ifooter">
-    <p> Patrocinadores:</p>
-    <div id="pat">
-        <img src="/static/images/aston.svg" alt="aston martin">
-        <img src="/static/images/uelogo.svg" alt="UE">
-    </div>
-
-    <hr>
-    <p>Developed by Guilherme Grilo e Helder Godinho</p>
-</footer>
 </body>
 </html>

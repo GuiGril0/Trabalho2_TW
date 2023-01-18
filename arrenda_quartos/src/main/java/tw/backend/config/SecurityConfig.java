@@ -29,12 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
                     .authorizeRequests()// , authorize request
                     //.antMatchers("/admin*").authenticated()
-					.antMatchers("/anunciar", "/multibanco").access("hasRole('ROLE_USER')")
-					.antMatchers("/utilizador").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+					.antMatchers("/anunciar", "/multibanco", "/utilizador").access("hasRole('ROLE_USER')")
 					.antMatchers("/admin", "/adminads").access("hasRole('ROLE_ADMIN')")
                     .antMatchers("/*", "/static/**",
 							"/registuser",
-							"/procurar").permitAll()
+							"/procurar",
+							"/anuncio").permitAll()
                     .and()
                     .formLogin().loginPage("/login")// specifies the location of the log in page
                     .loginProcessingUrl("/j_spring_security_check")// login submit target

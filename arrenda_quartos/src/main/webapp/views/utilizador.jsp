@@ -18,23 +18,26 @@
         <ul id="myDropdown" class="dropdown-content">
             <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
-            ${h}
+            <li><a href="/logout">Logout</a></li>
         </ul>
     </nav>
 </header>
+<main>
+    <div class="main-div">
+        <div class="content">
+            <div id="ResultadosBox">${user}</div>
+        </div>
+        <class class="footer">
+            <div id="pat">
+                <p>Patrocinadores</p>
+                <img src="/static/images/aston.svg" alt="aston martin">
+                <img src="/static/images/uelogo.svg" alt="UE">
+            </div>
 
-<div id="userads">${user}</div>
-
-<footer id="ufooter">
-    <p> Patrocinadores:</p>
-    <div id="pat">
-        <img src="/static/images/aston.svg" alt="aston martin">
-        <img src="/static/images/uelogo.svg" alt="UE">
+            <hr>
+            <p>Developed by Guilherme Grilo e Helder Godinho</p>
+        </class>
     </div>
-
-    <hr>
-    <p>Developed by Guilherme Grilo e Helder Godinho</p>
-</footer>
-
+</main>
 </body>
 </html>

@@ -22,43 +22,44 @@
         </ul>
     </nav>
 </header>
-<div id="ContentProcura">
-    <h2>Procurar</h2>
-<form action="/procurar" method="POST">
-    <ul id="opcoes">
-        <li>
-            <label>Tipo:
-                <select name="typead">
-                    <option value="oferta">Oferta</option>
-                    <option value="procura">Procura</option>
-                </select>
-            </label>
-        </li>
-        <li><label>Localização: <input type="text" name="localad"></label></li>
-        <li><label>Anunciante: <input type="text" name="advertiser"></label></li>
-    </ul>
-    <input type="submit" value="Pesquisar">
-</form>
-</div>
+
 <main>
-<div id="resultados" >
-${ads}
-</div>
-    <div id="arrows">
-        <button><<i class="left"></i></button>
-        ${pages}
-        <button>><i class="right"></i></button>
+    <div class="main-div">
+        <div class="content">
+            <div id="resultados" >
+                ${ads}
+            </div>
+            <div class="ContentBox">
+                <h2>Procurar</h2>
+                <form action="/procurar" method="POST">
+                    <ul id="opcoes">
+                        <li>
+                            <label>Tipo:
+                                <select name="typead" id="search-type">
+                                    <option value="oferta">Oferta</option>
+                                    <option value="procura">Procura</option>
+                                </select>
+                            </label>
+                        </li>
+                        <li><label>Localização: <input type="text" name="localad"></label></li>
+                        <li><label>Anunciante: <input type="text" name="advertiser"></label></li>
+                    </ul>
+                    <input type="submit" value="Pesquisar">
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div id="pat">
+                <p>Patrocinadores</p>
+                <img src="/static/images/aston.svg" alt="aston martin">
+                <img src="/static/images/uelogo.svg" alt="UE">
+            </div>
+            <hr>
+            <p>Developed by Guilherme Grilo e Helder Godinho</p>
+        </div>
     </div>
 </main>
-<footer id="pfooter">
-    <p> Patrocinadores:</p>
-    <div id="pat">
-        <img src="/static/images/aston.svg" alt="aston martin">
-        <img src="/static/images/uelogo.svg" alt="UE">
-    </div>
 
-    <hr>
-    <p>Developed by Guilherme Grilo e Helder Godinho</p>
-</footer>
 </body>
 </html>

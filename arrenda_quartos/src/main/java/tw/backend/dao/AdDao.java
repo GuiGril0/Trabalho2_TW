@@ -36,7 +36,7 @@ public class AdDao {
         db.connectDb();
         Statement stmt = db.getStatement();
 
-        ResultSet rs = stmt.executeQuery("select * from advertisements WHERE typead LIKE '" + type + "' ORDER BY date DESC LIMIT 3");
+        ResultSet rs = stmt.executeQuery("select * from advertisements WHERE statead='ativo' AND typead LIKE '" + type + "' ORDER BY date DESC LIMIT 3");
 
         List<Ad> threeAds = new ArrayList<Ad>();
         while(rs.next()) {
@@ -109,6 +109,8 @@ public class AdDao {
         }
 
         db.closeConnection();
+        if(ads.size() == 0)
+            return null;
         return ads;
     }
 

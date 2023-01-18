@@ -19,19 +19,17 @@
         <ul id="myDropdown" class="dropdown-content">
             <li><a href="/procurar">Procurar</a></li>
             <li><a href="/anunciar">Anunciar</a></li>
-            ${h}
         </ul>
     </nav>
 </header>
-<footer id="anufooter">
-    <p> Patrocinadores:</p>
-    <div id="pat">
-        <img src="/static/images/aston.svg" alt="aston martin">
-        <img src="/static/images/uelogo.svg" alt="UE">
-    </div>
-
-    <hr>
-    <p>Developed by Guilherme Grilo e Helder Godinho</p>
-</footer>
+<div id="errors">
+<c:if test="${error == 'Not Found'}">
+    <img src="/static/images/error404.jpeg">
+</c:if>
+    <c:if test="${error == 'Forbidden'}">
+        <img src="/static/images/error403.jpeg">
+    </c:if>
+    ${e}
+</div>
 </body>
 </html>

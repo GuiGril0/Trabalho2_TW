@@ -4,34 +4,97 @@ html, body{
 }
 /* Cabeçalho */
 header {
-    background: linear-gradient(to right, whitesmoke, lightgray);
+    background-color: #D0B8A8;
     width: 100%;
     height: 60px;
 
 }
-#arrows {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+
+.main-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#arrows .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+.content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 
-#arrows .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+.footer {
+    width: 100%;
+    background-color: #D0B8A8;
+}
+
+#pat {
+    display: flex;
+    align-items: center;
+}
+
+#pat img{
+    padding: 1vh;
+    width: 3vw;
+    margin-left: 1vw;
+}
+
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+}
+
+#resultados .box {
+    width: 100%;
+}
+
+#AnunciarBox {
+    height: 85vh !important;
+}
+
+#ResultadosBox {
+    display: flex;
+    flex-direction: column;
 }
 
 .dropbutton {
     display: none;
 }
 
+#changeadstate {
+    display: flex;
+    flex-direction: column;
+}
+
+.adminbutton, .userbutton {
+    width: 65%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.userbutton {
+    margin-top: 0 !important;
+}
+
+#msgsbox {
+    width: 60%;
+    background-color: #D0B8A8;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+    overflow: scroll;
+    height: 75vh;
+}
+
 *{
     font-family: Ubuntu, sans-serif;
+    list-style: none;
+    color: #8B4513 !important;
 }
 
 #homePage{
@@ -69,46 +132,39 @@ header nav ul li a {
 
 /* Corpo */
 body {
-    background: linear-gradient(to right, lightblue, violet);
+    background-color: #F8EDE3;
     position: relative;
     min-height: 100vh;
 }
+/*
 main{
     margin: 5%;
     padding-bottom: 2.5rem;
 }
+*/
+
 img{
     width: 100%;
 }
 
 #offer {
-    margin-top: -5%;
-    margin-left: 5%;
     text-align: center;
 }
+
 #search {
-    clear: both;
-    float: bottom;
     text-align: center;
 }
+
 #ofertas{
     width: 100%;
-    clear: both;
-    float: top;
-    margin-left: -3%;
+    display: flex;
+    justify-content: center;
 }
 
 #procuras{
     width: 100%;
-    float: bottom;
-    margin-left: -3%;
-}
-
-#ofertas .box {
-    background: linear-gradient(to right, cyan, deepskyblue);
-    float: left;
-    width: 28%;
-    margin-left: 5%;
+    display: flex;
+    justify-content: center;
 }
 
 #ofertas a {
@@ -131,12 +187,15 @@ img{
     height: 14em;
 }
 
-#procuras .box {
-    background: linear-gradient(to right, cyan, deepskyblue);
+#ofertas .box:first-child, #procuras .box:first-child {
+    margin-left: 0;
+}
+
+.box {
+    background: linear-gradient(90deg, #D0B8A8 0%, #ECCDB8 100%);
     float: left;
     width: 28%;
     margin-left: 5%;
-    margin-bottom: -2%;
 }
 
 #procuras a {
@@ -149,38 +208,94 @@ img{
     overflow: auto;
 }
 
-/* Rodapé */
-footer {
-    background: linear-gradient(to right, whitesmoke, lightgray);
-    clear: both;
-    width: 100%;
-    position: relative;
-    margin-top: 18.5%;
-    height: 2.5rem;
+.mae{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mae .footer #pat #am{
+    padding-left: 10% ;
+    max-width: 100%;
+    height: 3em;
 }
 
-footer #sponsors {
+.mae .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, whitesmoke, lightgray);
+    text-align: center;
+
+}
+#ContentAnunciar input[type=submit]{
+    width: 30%;
+    background-color: #191907;
+    color: white;
+    padding: 3%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#ContentAnunciar input[type=text], select, input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#pay{
+    width: 50%;
+    height: 50%;
+    margin-left: -5%;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 3%;
+
+
+
+}
+
+#search-type {
+    height: auto !important;
+}
+
+#pay img{
+
+    margin-left: -10%;
+    padding-left: 15%;
+    height: 30%;
+    width: 20%;
+}
+#pay ul{
+    padding-left: 40%;
+
+    margin-top: -20%;
+    font-size: 200%;
+    list-style: none;
+}
+#pay ul li{
+    margin: 1%;
+}
+
+.footer #sponsors {
     font-size: medium;
     float: left;
     margin-top: -0.1em;
 }
-footer #credits {
+.footer #credits {
     font-size: small;
     text-align: center;
     float: bottom;
 }
 
-#pat img{
-    clear: both;
-    float: left;
-    padding: 2px 2px;
-    height: 30px;
-    margin-left: -42%;
-    margin-top: -2%;
-}
-
-#pat #ue {
-    margin-left: -39%;
+#stateadmin{
+    width: 15%;
+    padding-left: 42.5%;
+    height: 75vh;
 }
 
 /* procurar.jsp */
@@ -188,7 +303,7 @@ footer #credits {
     list-style-type: none;
 }
 
-#ContentProcura input[type=text], select{
+.ContentBox input[type=text], select{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -196,25 +311,30 @@ footer #credits {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    height: 4vh !important;
 }
-#ContentProcura h2{
+.ContentBox h2{
     text-align: center;
     font-size: xxx-large;
     margin-bottom: 10%;
 }
 
-#ContentProcura{
-    width: 35%;
+.ContentBox {
+    height: 65vh;
     margin: auto;
     justify-content: center;
-    padding: 8%;
+    padding: 5%;
     border-style: solid;
-    border-color: #B6C7D6;
-    border-radius: 10%;
-    background-color: #EAF0F6;
+    border-color: #8B4513;
+    border-radius: 5%;
+    border-width: 2px;
+    background: linear-gradient(90deg, #D0B8A8 0%, #ECCDB8 100%);
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
 }
 
-#ContentProcura input{
+.ContentBox input{
     width: 100%;
     border-radius: 9px;
     border-color: black;
@@ -224,7 +344,7 @@ footer #credits {
 
 }
 
-#ContentProcura select{
+.ContentBox select{
     border-radius: 9px;
     border-color: black;
     padding-left: 10px;
@@ -232,23 +352,26 @@ footer #credits {
     height: auto;
 }
 
-#ContentProcura ul li{
+.ContentBox ul li{
     margin: 1%;
 }
 
-#ContentProcura input[type=submit]{
-    width: 100%;
-    background-color: #191907;
+.ContentBox ul{
+    padding-left: 0.9%;
+}
+
+.ContentBox input[type=submit]{
+    width: 98%;
     color: white;
     padding: 3%;
-    margin-left: 2.5%;
+    margin-left: 2%;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 
-
+/*
 #resultados .box img{
     width: 100%;
 }
@@ -268,7 +391,7 @@ footer #credits {
     width: 50%;
     margin: auto;
 }
-
+*/
 #pfooter {
     position: relative;
     bottom: calc(2px - 23em);
@@ -281,6 +404,27 @@ footer #credits {
     text-align: center;
 }
 
+#anu {
+    height: 75vh;
+    display: flex;
+}
+
+#mb {
+    height: 72vh;
+}
+
+#anu > .box {
+    background: linear-gradient(90deg, #D0B8A8 0%, #ECCDB8 100%);
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+}
+
+#AdBox {
+    width: 100% !important;
+    flex-direction: row !important;
+}
+/*
 #anu .box a {
     text-decoration: none;
     color: black;
@@ -333,24 +477,36 @@ footer #credits {
     position: relative;
     bottom: calc(15px - (2em));
 }
+*/
+
+.box form {
+    display: flex;
+    flex-direction: column;
+}
 
 /* form.html */
 #ContentAnunciar ul{
     list-style-type: none;
 }
+
 #TituloAnunciar{
     text-align: center;
     font-size: 1.5em;
 }
 #ContentAnunciar{
-    width: 600px;
+    width: 50%;
+    width: 50%;
     margin: auto;
     text-align: center;
-    padding: 20px;
+    padding: 5%;
     border-style: solid;
     border-color: #B6C7D6;
     border-radius: 20px;
     background-color: #EAF0F6;
+    height: 60%;
+}
+#ContentAnunciar #anunciaul li{
+    margin: -1%;
 }
 
 #ContentAnunciar input{
@@ -359,6 +515,10 @@ footer #credits {
     padding-left: 10px;
     font-size: large;
     height: auto;
+}
+#ContentAnunciar h2{
+    margin-top: -5%;
+    text-align: center;
 }
 
 #ContentAnunciar select{
@@ -369,21 +529,14 @@ footer #credits {
     height: auto;
 }
 
-#ContentAnunciar input[type=submit]{
-    width: 20vw;
-    height: auto;
-    margin-left: 6vw;
-}
+
 
 
 #ContentAnunciar ul li{
     margin: 2%;
+    padding-right: 8%;
 }
 
-#ffooter {
-    position: relative;
-    bottom: calc(10px - (15em));
-}
 
 #ativo .box {
     box-sizing: content-box;
@@ -457,6 +610,106 @@ footer #credits {
     text-decoration: none;
     font-size: 16px;
 }
+#userads {
+    clear: both;
+}
+/*
+#usero {
+    clear: both;
+    float: top;
+    width: 100%;
+}
+#usero .box{
+    clear: both;
+    float: left;
+    margin-left: 5%;
+}
+#usero .box img {
+    width: 20%;
+    height: 20%;
+
+}
+#usero h2{
+    text-align: center;
+}
+#userp h2{
+    text-align: center;
+}
+#userp{
+    clear: both;
+    width: 100%;
+    float:bottom;
+}
+
+#userp .box a img{
+    height: 20%;
+    width: 20%;
+}
+
+#userp .box a ul{
+    margin-left: 2%;
+}
+#userp .box {
+    clear: both;
+    float: left;
+    margin-left: 5%;
+
+}
+*/
+#login-box {
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    justify-content: center;
+    padding: 8%;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 10%;
+    background-color: #EAF0F6;
+}
+
+#login-box h2{
+    text-align: center;
+    font-size: xxx-large;
+}
+
+#login-box table{
+    margin-left: 25%;
+
+}
+
+#login-box table input[type=text]{
+    width: 100%;
+}
+
+#registo {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    padding: 5%;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 10%;
+    background-color: #EAF0F6;
+}
+#registo li {
+    font-size: x-large;
+    padding: 3%;
+}
+
+#registo input[type=text], input[type=password]{
+    width: 100%;
+    padding: 2%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 4vh !important;
+}
+
 
 /*paginação*/
 .hidden {
@@ -516,8 +769,7 @@ footer #credits {
     .dropdown {
         width: 8%;
         position: absolute;
-        left: 85%;
-        top: 2%;
+        left: 90%;
         display: inline-block;
     }
 
@@ -565,7 +817,9 @@ footer #credits {
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
+        height: auto !important;
     }
+
     #ContentProcura input[type=submit]{
         width: 100%;
         background-color: #191907;
@@ -578,36 +832,6 @@ footer #credits {
     }
 
 
-    #ContentAnunciar{
-        width: 300px;
-        margin: auto;
-        text-align: center;
-        padding: 20px;
-        border-style: solid;
-        border-color: #B6C7D6;
-        border-radius: 20px;
-        background-color: #EAF0F6;
-    }
-    #ContentAnunciar h2{
-        font-size: medium;
-    }
-    #ContentAnunciar select{
-        font-size: smaller;
-        height: auto;
-    }
-    #ContentAnunciar input[type=text]{
-        height: auto;
-        width: 50px;
-    }
-    #ContentAnunciar input[type=submit]{
-        font-size: smaller;
-        height: auto;
-        width: 100px;
-    }
-    #ContentAnunciar input[type=number]{
-        height: auto;
-        width: 100px;
-    }
 
     #login{
         width: 300px;
@@ -666,3 +890,8 @@ footer #credits {
         width: 80%;
     }
 }
+
+a{
+    text-decoration: none;
+}
+
