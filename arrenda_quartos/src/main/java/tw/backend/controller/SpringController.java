@@ -529,7 +529,7 @@ public class SpringController {
                     sb.append("<h3>Este utilizador não possui nenhum anúncio do tipo procura publicado!</h3>");
                 for (Ad ad : searchAds) {
                     sb.append("<div class=box>" +
-                            "<a href=\"/useranuncio?aid=" + ad.getAid() + "\">" +
+                            "<a href=\"/anuncio?aid=" + ad.getAid() + "\">" +
                             "<img src=\"/static/images/house.png\">" +
                             "<div id=\"" + ad.getAid() + "\">" +
                             "<ul> <li>Anunciante: " + ad.getAdvertiser() + "</li>" +
@@ -593,7 +593,7 @@ public class SpringController {
                               @RequestParam String aid,
                               @RequestParam String state) throws Exception {
         AdDao adDao = new AdDao();
-        List<Ad> ads = adDao.getAdsByFields("statead=" + state);
+        List<Ad> ads = adDao.getAdsByFields("aid=" + aid);
         StringBuilder sb = new StringBuilder();
         for (Ad ad : ads) {
             sb.append("<div class=box>" +
